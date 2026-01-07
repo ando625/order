@@ -24,3 +24,13 @@ Route::get('/',[OrderController::class, 'index'])->name('menus.index');
 Route::get('/cart',[OrderController::class, 'cart']);
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 Route::get('/api/menus', [OrderController::class, 'apiMenus']);
+
+
+Route::middleware('auth')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::get('/index', [AdminOrderController::class, 'index'])->name('index');  //URLは/admin/index
+
+        Route::post('/orders/{order}/handed', [AdminOrderController::class, 'handed'])->name('orders.handed');
+});

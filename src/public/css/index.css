@@ -1,0 +1,151 @@
+/* 全体のコンテナ */
+.admin-order-container {
+    padding: 0px 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.page-title {
+    color: #e5c158;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+}
+
+/* 1. カードを横に4枚並べる設定 */
+.order-grid {
+    display: grid;
+    /* 5枚から4枚に変更し、1枚あたりの幅に余裕を持たせます */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+/* 注文カード1枚の設定 */
+.order-card {
+    background-color: rgba(45, 33, 24, 0.6);
+    border: 1px solid #4a3829;
+    padding: 20px;
+    border-radius: 8px;
+    /* カードの高さを揃えるための魔法：中身を縦に並べて下の要素を押し下げる */
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    /* 必要に応じて最低の高さを調整してください */
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5c158;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.order-number {
+    color: #e5c158;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.order-time {
+    color: #f1e5d1;
+    font-size: 14px;
+}
+
+/* 2. テーブルのレイアウト修正：金額を右端に固定 */
+.order-table {
+    width: 100%;
+    table-layout: fixed;
+    /* 列の幅を強制的に固定します */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: #f1e5d1;
+}
+
+/* 比率の再調整：名前(60%)、数量(15%)、金額(25%) */
+.col-name {
+    width: 60%;
+}
+
+.col-qty {
+    width: 15%;
+    text-align: center;
+}
+
+.col-price {
+    width: 25%;
+    text-align: right;
+}
+
+.order-table th {
+    font-size: 12px;
+    color: rgba(241, 229, 209, 0.6);
+    padding-bottom: 10px;
+}
+
+.order-table td {
+    padding: 12px 2px;
+    vertical-align: top;
+    /* 文字が複数行になっても上に揃える */
+    border-bottom: 1px solid rgba(241, 229, 209, 0.1);
+}
+
+/* 商品名の折り返し設定：2行まで表示して、それ以上は「...」 */
+.name-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* 2行まで表示 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    word-break: break-all;
+    /* 英単語でも強制改行 */
+}
+
+.col-price {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* 3. 合計金額とボタンを一番下に揃える魔法 */
+.order-footer {
+    margin-top: auto;
+    /* これで上の要素（テーブル）との隙間を最大に広げます */
+    padding-top: 20px;
+}
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f1e5d1;
+    border-top: 1px solid rgba(229, 193, 88, 0.3);
+    /* 合計の上に薄い線 */
+    padding-top: 10px;
+}
+
+.total-value {
+    color: #e5c158;
+}
+
+/* 完了ボタン */
+.done-button {
+    width: 100%;
+    padding: 14px;
+    background-color: rgba(197, 160, 89, 0.4);
+    border: 1px solid #c5a059;
+    color: #f1e5d1;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.done-button:hover {
+    background-color: #c5a059;
+    color: #1a1510;
+}
