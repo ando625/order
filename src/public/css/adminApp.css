@@ -21,13 +21,14 @@ header {
     z-index: 1000;
 }
 
+/* 修正点：中身を左右に振り分ける魔法 */
 .header-container {
     max-width: 100%;
     margin: 0 auto;
     padding: 10px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;         /* 横並びにする */
+    justify-content: space-between; /* ロゴは左、ナビは右へ */
+    align-items: center;    /* 上下の中心を揃える */
 }
 
 .site-title {
@@ -56,47 +57,44 @@ header {
     font-style: normal;
 }
 
-
-/* ナビゲーション全体のリスト */
+/* 新規：ナビゲーションのスタイル */
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 30px; /* メニュー同士の間隔 */
     align-items: center;
     margin-right: 20px;
 }
 
-.nav-item,
-.logout-button {
+.nav-item {
     text-decoration: none;
-    color: #bfa38a;
+    color: #bfa38a; /* 落ち着いたアンティークベージュ */
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 1px;
+    transition: all 0.3s ease;
     background: none;
     border: none;
     cursor: pointer;
     font-family: 'Playfair Display', serif;
-    transition: all 0.3s ease;
-    display: inline-block;
 }
 
-
-
-.nav-item:hover,
-.logout-button:hover {
+/* ホバー時にロゴと同じゴールドに光らせる */
+.nav-item:hover {
     color: #d4af37;
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* 軽く浮き上がらせる */
+}
+
+/* ログアウトボタン（枠をつけて特別感を出す） */
+.logout-button {
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+
+.logout-button:hover {
     border-color: #d4af37;
 }
-
-/* クリックした瞬間の青い枠（フォーカス）を消す */
-.nav-item:focus,
-.logout-button:focus {
-    outline: none;
-}
-
 
 /* 共通レイアウト */
 .container {

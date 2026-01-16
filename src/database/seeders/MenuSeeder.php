@@ -330,9 +330,6 @@ class MenuSeeder extends Seeder
 
 
 
-
-
-
     ];
 
         foreach($menus as $menu) {

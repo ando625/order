@@ -34,7 +34,7 @@
                     <tr>
                         <td class="col-name">{{$item->menu->name}}</td>
                         <td class="col-qty">{{$item->quantity}}</td>
-                        <td class="col-price">¥{{number_format($item->price)}}</td>
+                        <td class="col-price">¥{{number_format($item->price * $item->quantity)}}</td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -18,7 +18,7 @@
             <nav class="header-nav">
                 <ul class="nav-list">
                     <li><a href="{{route('admin.index')}}" class="nav-item">注文状況</a></li>
-                    <li><a href="" class="nav-item">注文履歴</a></li>
+                    <li><a href="{{ route('admin.orders.history')}}" class="nav-item">注文履歴</a></li>
                     <li><a href="" class="nav-item">月日別注文履歴</a></li>
                     <li><a href="" class="nav-item">売上統計</a></li>
                     <li>

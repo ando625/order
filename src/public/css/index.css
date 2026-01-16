@@ -12,12 +12,13 @@
     letter-spacing: 4px;
 }
 
-/* 1. カードを横に4枚並べる設定 */
+/* ★1. カードを横に3枚並べる設定に変更 */
 .order-grid {
     display: grid;
-    /* 5枚から4枚に変更し、1枚あたりの幅に余裕を持たせます */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    /* 4枚から3枚に変更：1枚あたりの面積が増え、視認性が向上します */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* 幅に余裕が出るので、カード間の隙間も少し広げると綺麗です */
     padding: 10px;
 }
 
@@ -25,51 +26,51 @@
 .order-card {
     background-color: rgba(45, 33, 24, 0.6);
     border: 1px solid #4a3829;
-    padding: 20px;
+    padding: 25px;
+    /* 3枚並びで広くなった分、内側の余白を少し贅沢に */
     border-radius: 8px;
-    /* カードの高さを揃えるための魔法：中身を縦に並べて下の要素を押し下げる */
     display: flex;
     flex-direction: column;
-    min-height: 400px;
-    /* 必要に応じて最低の高さを調整してください */
+    min-height: 450px;
+    /* カードの横幅に合わせて最低の高さも少し高めに調整 */
 }
 
 .order-header {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #e5c158;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 .order-number {
     color: #e5c158;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
+    /* 3枚並びなら少し大きくしても大丈夫 */
 }
 
 .order-time {
     color: #f1e5d1;
-    font-size: 14px;
+    font-size: 15px;
 }
 
-/* 2. テーブルのレイアウト修正：金額を右端に固定 */
+/* 2. テーブルのレイアウト修正 */
 .order-table {
     width: 100%;
     table-layout: fixed;
-    /* 列の幅を強制的に固定します */
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #f1e5d1;
 }
 
-/* 比率の再調整：名前(60%)、数量(15%)、金額(25%) */
+/* ★比率の再調整：3枚並びなら商品名をしっかり見せられます */
 .col-name {
-    width: 60%;
+    width: 65%;
 }
 
 .col-qty {
-    width: 15%;
+    width: 10%;
     text-align: center;
 }
 
@@ -79,53 +80,51 @@
 }
 
 .order-table th {
-    font-size: 12px;
+    font-size: 13px;
     color: rgba(241, 229, 209, 0.6);
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .order-table td {
-    padding: 12px 2px;
+    padding: 15px 2px;
+    /* 行間を少し広げて読みやすく */
     vertical-align: top;
-    /* 文字が複数行になっても上に揃える */
     border-bottom: 1px solid rgba(241, 229, 209, 0.1);
 }
 
-/* 商品名の折り返し設定：2行まで表示して、それ以上は「...」 */
+/* 商品名の折り返し設定：3枚並びなら1段落で収まりやすくなります */
 .name-truncate {
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    /* 2行まで表示 */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 1.4;
+    line-height: 1.5;
     word-break: break-all;
-    /* 英単語でも強制改行 */
 }
 
 .col-price {
     text-align: right;
     font-weight: bold;
+    font-size: 15px;
 }
 
-/* 3. 合計金額とボタンを一番下に揃える魔法 */
+/* 3. 合計金額とボタンを一番下に揃える */
 .order-footer {
     margin-top: auto;
-    /* これで上の要素（テーブル）との隙間を最大に広げます */
-    padding-top: 20px;
+    padding-top: 25px;
 }
 
 .total-section {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
-    font-size: 18px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    /* 3枚並びの主役にふさわしく少し強調 */
     font-weight: bold;
     color: #f1e5d1;
     border-top: 1px solid rgba(229, 193, 88, 0.3);
-    /* 合計の上に薄い線 */
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 .total-value {
@@ -135,7 +134,7 @@
 /* 完了ボタン */
 .done-button {
     width: 100%;
-    padding: 14px;
+    padding: 16px;
     background-color: rgba(197, 160, 89, 0.4);
     border: 1px solid #c5a059;
     color: #f1e5d1;
@@ -143,9 +142,12 @@
     transition: all 0.3s;
     border-radius: 4px;
     font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 .done-button:hover {
     background-color: #c5a059;
     color: #1a1510;
+    box-shadow: 0 0 15px rgba(229, 193, 88, 0.3);
 }

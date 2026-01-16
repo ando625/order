@@ -33,4 +33,6 @@ Route::middleware('auth')
         Route::get('/index', [AdminOrderController::class, 'index'])->name('index');  //URLは/admin/index
 
         Route::post('/orders/{order}/handed', [AdminOrderController::class, 'handed'])->name('orders.handed');
+
+        Route::get('/orders/history',[AdminOrderController::class, 'history'])->name('orders.history');
 });

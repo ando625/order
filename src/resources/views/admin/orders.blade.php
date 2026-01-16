@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.adminApp')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/orders.css')}}">
@@ -7,51 +7,81 @@
 @section('content')
 
 <div class="admin-history-container">
-    <h1 class="admin-title">注文履歴管理</h1>
+    <h1 class="page-title">注文履歴管理</h1>
+    <h2 class="sub-title">
+        @if ($mode === 'daily')
+            <span class="highlight-gold">{{ $date }}</span> の注文履歴
+        @else
+            <span class="highlight-gold">{{ $month }}</span> の注文履歴
+        @endif
+    </h2>
 
-    <div class="history-tabs">
-        <a href="" class="tab-item active">日付別</a>
-        <a href="" class="tab-item">月別</a>
+    <form action="{{ route('admin.orders.history') }}" method="get" class="search-form">
+    <div class="search-group">
+
+        <div class="input-item">
+            <label class="search-label">日付で見る</label>
+            <input type="date"
+                   name="date"
+                   value="{{ request('date') }}"
+                   class="search-input">
+        </div>
+
+        <div class="input-item">
+            <label class="search-label">月で見る</label>
+            <input type="month"
+                   name="month"
+                   value="{{ request('month') }}"
+                   class="search-input">
+        </div>
+
+        <button type="submit" class="search-button">表示</button>
+    </div>
+</form>
+
+    <div class="history-content">
+    <div class="history-blocks-wrapper">
+        @foreach ($orders as $order)
+            <div class="order-block">
+                <div class="order-block-header">
+                    <div class="header-left">
+                        <span class="order-id">#{{ $order->order_number }}</span>
+                        <span class="order-date">{{ $order->created_at->format('Y/m/d H:i') }}</span>
+                    </div>
+                </div>
+
+                <table class="order-items-table">
+                    <thead>
+                        <tr>
+                            <th class="col-name">商品名</th>
+                            <th class="col-qty">数量</th>
+                            <th class="col-price">単価</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($order->items as $item)
+                            <tr>
+                                <td class="text-left">{{ $item->menu->name }}</td>
+                                <td class="font-en">{{ $item->quantity }}</td>
+                                <td class="font-en">¥{{ number_format($item->price) }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+                <div class="order-block-footer">
+                    <span class="total-label">注文合計金額</span>
+                    <span class="total-amount-value font-en">¥{{ number_format($order->total_price) }}</span>
+                </div>
+            </div>
+        @endforeach
     </div>
 
-    <form action="" method="get" class="search-form">
-        <div class="search-group">
-            <label for="date" class="search-lavel">表示する日付を選択</label>
-            <input type="date" name="date" id="date" value="" class="search-input">
-            <button type="submit" class="search-button">台帳を更新</button>
-        </div>
-    </form>
-
-    <div class="histroty-content">
-        <div class="history-table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>注文日時</th>
-                        <th>商品名</th>
-                        <th>数量</th>
-                        <th>合計金額</th>
-                        <th>ステータス</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><!-- 2026/01/06 18:30 --></td>
-                        <td><!-- 商品名 --></td>
-                        <td><!-- 数量 --></td>
-                        <td><!-- 金額 --></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr class="ledger-footer">
-                        <td colspan="3" class="text-right">本日（選択日）の売上総計</td>
-                        <td class="total-amount"></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+    <div class="grand-total-section">
+        <span class="grand-total-label">期間内売上総計</span>
+        <span class="grand-total-value font-en">¥{{ number_format($totalSales) }}</span>
     </div>
+</div>
 </div>
 
 @endsection

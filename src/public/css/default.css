@@ -6,10 +6,9 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Playfair Display', serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     background-color: #1e1610;
     color: #f4ece2;
-    font-family: 'Playfair Display', serif;
     line-height: 1.6;
 }
 
@@ -22,11 +21,17 @@ header {
     z-index: 1000;
 }
 
-
+/* 修正点：中身を左右に振り分ける魔法 */
 .header-container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 10px 40px;
+    display: flex;
+    /* 横並びにする */
+    justify-content: space-between;
+    /* ロゴは左、ナビは右へ */
+    align-items: center;
+    /* 上下の中心を揃える */
 }
 
 .site-title {
@@ -38,7 +43,6 @@ header {
     font-style: italic;
     font-family: "Playfair Display", serif;
     text-align: left;
-    margin-left: 30px;
     letter-spacing: 2px;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -65,7 +69,6 @@ header {
 }
 
 .main-content {
-    /* background: linear-gradient(to bottom, #1a1a1b, #151515); */
     background-color: rgba(27, 24, 22, 0.9) !important;
     padding: 30px;
 }

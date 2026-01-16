@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class Order extends Model
 {
@@ -28,24 +28,35 @@ class Order extends Model
     // ready     → 受け渡し待ち
     // handed    → 受け渡し完了
 
-    //合計金額を計算するアクセサ
-    public function getTotalPriceAttribute()
+    // 表示・確認用：現在の合計金額（DB保存とは別）
+    public function getCalculatedTotalPriceAttribute()
     {
-        return $this->items->sum(function ($item) {
-            return $item->price * $item->quantity;
-        });
+        return $this->items->sum(
+            fn($item) => $item->price * $item->quantity
+        );
     }
 
-
+    // 注文作成時に「日付ごとの連番」だけを付与
     protected static function booted()
     {
         static::creating(function ($order) {
-            $order->order_number = self::generateOrderNumber();
+            $order->order_number = self::generateDailyOrderNumber();
         });
     }
 
-    private static function generateOrderNumber()
+
+    // 今日の注文番号を1から振る
+    private static function generateDailyOrderNumber()
     {
-        return now()->format('Ymd') . '-' . strtoupper(Str::random(6));
+        $today = Carbon::today();
+
+        $latestNumber = self::whereDate('created_at', $today)
+            ->max('order_number');
+
+        return ($latestNumber ?? 0) + 1;
     }
+
+
+
+
 }
