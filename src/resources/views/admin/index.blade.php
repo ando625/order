@@ -61,5 +61,11 @@
     </div>
 </div>
 
+<script>
+    setInterval(() => {
+        location.reload();
+    }, 5000);
+</script>
+
 
 @endsection
