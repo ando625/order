@@ -35,4 +35,12 @@ Route::middleware('auth')
         Route::post('/orders/{order}/handed', [AdminOrderController::class, 'handed'])->name('orders.handed');
 
         Route::get('/orders/history',[AdminOrderController::class, 'history'])->name('orders.history');
+
+        Route::get('/statistics', [AdminOrderController::class, 'statistics'])->name('statistics');
+
+        //キッチン
+        Route::get('/kitchen/orders', [KitchenController::class, 'index'])->name('kitchen.index');
+        Route::post('/kitchen/orders/{order}/start', [KitchenController::class, 'start'])->name('kitchen.orders.start');
+        Route::post('/kitchen/orders/{order}/ready', [KitchenController::class, 'ready'])->name('kitchen.orders.ready');
 });
+

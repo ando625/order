@@ -28,6 +28,17 @@ class Order extends Model
     // ready     → 受け渡し待ち
     // handed    → 受け渡し完了
 
+    //日本語用アクセサ
+    public function getStatusLabelAttribute()
+    {
+        return match ($this->status) {
+            'pending' => '注文確定',
+            'cooking' => '調理中',
+            'ready' => '受け渡し待ち',
+            'handed' => '受け渡し完了',
+        };
+    }
+
     // 表示・確認用：現在の合計金額（DB保存とは別）
     public function getCalculatedTotalPriceAttribute()
     {

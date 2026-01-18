@@ -11,13 +11,16 @@
 
     <div class="order-grid">
         @foreach ($orders as $order)
-        <div class="order-card">
+        <div class="order-card status-{{ $order->status }}">
             <div class="order-header">
                 <span class="order-number">
                     注文番号: #{{$order->order_number}}
                 </span>
                 <span class="order-time">
                     {{$order->created_at->format('H:i')}}
+                </span>
+                <span class="status-badge">
+                    {{ $order->status_label }}
                 </span>
             </div>
 

@@ -76,5 +76,27 @@ class OrderController extends Controller
         ]);
     }
 
+    public function statistics()
+    {
+        //直近６か月の月名と売り上げを計算
+        $labels = [];
+        $salesData = [];
+
+        for ($i = 5; $i >= 0; $i--) {
+            $month = now()->subMonths($i);
+
+            // ラベルを「1月」「2月」として追加
+            $labels[] = $month->isoFormat('MMM');
+
+            $total = (float)Order::whereMonth('created_at', $month->month)
+                ->whereYear('created_at', $month->year)
+                ->sum('total_price');
+
+            $salesData[] = $total;
+        }
+
+        return view('admin.statistics', compact('labels', 'salesData'));
+    }
+
 
 }

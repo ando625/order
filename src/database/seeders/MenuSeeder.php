@@ -328,8 +328,6 @@ class MenuSeeder extends Seeder
             'is_active' => true,
         ],
 
-
-
     ];
 
         foreach($menus as $menu) {

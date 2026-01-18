@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="admin-history-container">
-    <h1 class="page-title">注文履歴管理</h1>
+    <h1 class="page-title">月日別注文履歴</h1>
     <h2 class="sub-title">
         @if ($mode === 'daily')
             <span class="highlight-gold">{{ $date }}</span> の注文履歴
@@ -51,19 +51,22 @@
                 </div>
 
                 <table class="order-items-table">
+                    <colgroup>
+                        <col style="width: 65%;"> <col style="width: 15%;"> <col style="width: 20%;">
+                    </colgroup>
                     <thead>
                         <tr>
                             <th class="col-name">商品名</th>
                             <th class="col-qty">数量</th>
-                            <th class="col-price">単価</th>
+                            <th class="col-price text-right">単価</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($order->items as $item)
                             <tr>
                                 <td class="text-left">{{ $item->menu->name }}</td>
-                                <td class="font-en">{{ $item->quantity }}</td>
-                                <td class="font-en">¥{{ number_format($item->price) }}</td>
+                                <td class="col-qty-cell font-en">{{ $item->quantity }}</td>
+                                <td class="text-right font-en">¥{{ number_format($item->price) }}</td>
                             </tr>
                         @endforeach
                     </tbody>
