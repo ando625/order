@@ -380,6 +380,53 @@
     color: #bfa38a;
 }
 
+.option-selector {
+    font-size: 1rem;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    color: #bfa38a;
+}
+
+/* セレクトボックス本体のカスタマイズ */
+#menuOption {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #1a1a1a;
+    /* モーダル背景と同じ暗さ */
+    color: #f1e5d1;
+    /* テキストの色 */
+    border: 1px solid #4a3829;
+    /* 落ち着いた茶色の境界線 */
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* デフォルトの矢印を消してカスタマイズ（任意） */
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23d4af37' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C2.185 5.355 2.401 5 2.736 5h10.528c.335 0 .551.355.285.658l-4.796 5.482a.665.665 0 0 1-1.008 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+/* ホバー・フォーカス時 */
+#menuOption:hover,
+#menuOption:focus {
+    border-color: #d4af37;
+    /* 金色に光らせる */
+    background-color: #252525;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+}
+
+/* セレクトボックス内の選択肢 (option) */
+#menuOption option {
+    background-color: #1a1a1a;
+    color: #f1e5d1;
+    padding: 10px;
+}
+
 .quantity-btn {
     width: 35px;
     height: 35px;

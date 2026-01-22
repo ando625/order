@@ -22,7 +22,12 @@
                 <ul>
                     @foreach ($order->items as $item)
                     <li>
-                        <span class="item-name">{{ $item->menu->name }}</span>
+                        <span class="item-name">
+                            {{ $item->menu->name }}
+                            @if($item->option)
+                                ({{ $item->option}})
+                            @endif
+                        </span>
                         <span class="item-qty">× {{ $item->quantity }}</span>
                     </li>
                     @endforeach

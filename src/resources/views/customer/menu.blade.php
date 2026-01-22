@@ -72,12 +72,18 @@
                 <div class="modal-price">
                     <span id="modalMenuPrice"></span>
                 </div>
+                <div class="option-selector" style="display:none">
+                    <label>フレーバー:</label>
+                    <select name="" id="menuOption"></select>
+                </div>
+
                 <div class="quantity-selector">
                     <label>数量:</label>
                     <button class="quantity-btn" id="decreaseQty">-</button>
                     <input type="number" id="menuQuantity" value="1" min="1" max="50" readonly>
                     <button class="quantity-btn" id="increaseQty">+</button>
                 </div>
+
                 <div class="modal-actions">
                     <button id="addToCartFromModal" class="btn-add-cart">カートに追加</button>
                 </div>

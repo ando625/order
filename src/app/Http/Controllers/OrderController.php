@@ -48,6 +48,7 @@ class OrderController extends Controller
                 'menu_id' => $item['id'],
                 'price' => $item['price'],
                 'quantity' => $item['quantity'],
+                'option' => $item['option'] ?? null,
             ]);
 
         }

@@ -17,6 +17,13 @@ const menuQuantity = document.getElementById('menuQuantity');
 const decreaseBtn = document.getElementById('decreaseQty');
 const increaseBtn = document.getElementById('increaseQty');
 const addToCartFromModal = document.getElementById('addToCartFromModal');
+const menuOptionsMap = {
+    'エレメント・ソーダ': ['メロン', 'オレンジ', 'グレープ', 'ベリー'],
+    'クラウド・シェイク': ['ストロベリー', 'バニラ', 'マンゴー'],
+};
+const optionSelector = document.querySelector('.option-selector');
+const menuOptionSelect = document.getElementById('menuOption');
+
 
 //現在選択中のメニューデータ(今どの商品を選んでいるか一時的に覚えておく箱)
 let currentMenu = null;
@@ -34,6 +41,23 @@ document.querySelectorAll('.menu-card').forEach(card => {
             description: this.dataset.menuDescription,
             image: this.dataset.menuImage
         };
+
+        //ドリンクの選択タブ追加
+        const options = menuOptionsMap[currentMenu.name];
+
+        if (options) {
+            optionSelector.style.display = 'block';
+            menuOptionSelect.innerHTML = '';
+
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                menuOptionSelect.appendChild(opt);
+            });
+        } else {
+            optionSelector.style.display = 'none';
+        }
 
         //モダールに情報を表示
         modalMenuImage.src = currentMenu.image;
@@ -107,8 +131,12 @@ addToCartFromModal.addEventListener('click', function () {
 
 //カートに商品を追加
 function addToCart(menu, quantity) {
-    //すでにカートに同じ商品があるか確認
-    const existingItem = cart.find(item => item.id === menu.id);
+    const selectedOption = menuOptionSelect.value || null;
+
+    const existingItem = cart.find(item =>
+        item.id === menu.id &&
+        item.option === selectedOption
+    );
 
     if (existingItem) {
         existingItem.quantity += quantity;
@@ -116,6 +144,7 @@ function addToCart(menu, quantity) {
         cart.push({
             id: menu.id,
             name: menu.name,
+            option: selectedOption,
             price: menu.price,
             quantity: quantity,
             image: menu.image

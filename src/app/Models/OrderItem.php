@@ -14,6 +14,7 @@ class OrderItem extends Model
         'menu_id',
         'quantity',
         'price',
+        'option',
     ];
 
     //このアイテムは１つの注文に属する

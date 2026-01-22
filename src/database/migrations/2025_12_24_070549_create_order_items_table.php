@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('menu_id')->constrained()->cascadeOnDelete();
             $table->integer('quantity');
             $table->integer('price');
+            $table->string('option')->nullable();
             $table->timestamps();
         });
     }

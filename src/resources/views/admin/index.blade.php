@@ -35,7 +35,12 @@
                 <tbody>
                     @foreach ($order->items as $item)
                     <tr>
-                        <td class="col-name">{{$item->menu->name}}</td>
+                        <td class="col-name">
+                            {{$item->menu->name}}
+                            @if($item->option)
+                                ({{ $item->option }})
+                            @endif
+                        </td>
                         <td class="col-qty">{{$item->quantity}}</td>
                         <td class="col-price">¥{{number_format($item->price * $item->quantity)}}</td>
                     </tr>

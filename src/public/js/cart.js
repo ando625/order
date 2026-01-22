@@ -38,7 +38,10 @@ function displayCart() {
                 <img src="${item.image}" alt="${item.name}"></img>
             </div>
             <div class="cart-item-info">
-                <h3 class="cart-item-name">${item.name}</h3>
+                <h3 class="cart-item-name">
+                    ${item.name}
+                    ${item.option ? `<span class="cart-item-option">（${item.option}）</span>` : ''}
+                </h3>
                 <p class="cart-item-price">¥${item.price.toLocaleString()}</p>
                 <div class="cart-item-actions">
                     <div class="quantity-control">
