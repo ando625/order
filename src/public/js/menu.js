@@ -56,7 +56,10 @@ document.querySelectorAll('.menu-card').forEach(card => {
                 menuOptionSelect.appendChild(opt);
             });
         } else {
+            //オプションがない商品の場合は、表示を消すだけでなく値もリセットする
             optionSelector.style.display = 'none';
+            menuOptionSelect.innerHTML = '';
+            menuOptionSelect.value = 'null';
         }
 
         //モダールに情報を表示
@@ -131,17 +134,27 @@ addToCartFromModal.addEventListener('click', function () {
 
 //カートに商品を追加
 function addToCart(menu, quantity) {
-    const selectedOption = menuOptionSelect.value || null;
+    //オプション選択（コンテナ）が表示されているときだけ取得する
+    let selectedOption = null;
+    
+    // optionSelector（フレーバー選択の親要素）が表示されている（block）時だけ値を取得する。
+    // 非表示（none）の場合は、前回の値が残っていても強制的に null に上書きする。
+    if (optionSelector.style.display === 'block') {
+        selectedOption = menuOptionSelect.value;
+    } else {
+        selectedOption = null; // フレーバーがない商品なら確実に空にする
+    }
 
-    const existingItem = cart.find(item =>
-        item.id === menu.id &&
-        item.option === selectedOption
-    );
+    // IDの生成もここで行う
+    const cartItemId = selectedOption ? `${menu.id}-${selectedOption}` : menu.id;
+
+    const existingItem = cart.find(item => item.cartItemId === cartItemId);
 
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
         cart.push({
+            cartItemId: cartItemId,
             id: menu.id,
             name: menu.name,
             option: selectedOption,
@@ -155,8 +168,7 @@ function addToCart(menu, quantity) {
     sessionStorage.setItem('cart', JSON.stringify(cart));
 
     //追加成功メッセージを表示
-    showNotification(`${menu.name}をカートに追加しました（数量：${quantity})`);
-
+    showNotification(`${menu.name}${selectedOption ? `（${selectedOption}）` : ''}をカートに追加しました`);
     //カート数を更新（ヘッダーにカートアイコンがある場合)
     updateCartCount();
 }

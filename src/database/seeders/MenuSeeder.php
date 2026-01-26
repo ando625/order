@@ -19,21 +19,30 @@ class MenuSeeder extends Seeder
         $drink = Category::where('name', 'ドリンク＆デザート')->first();
 
         $menus = [
-            [
+        [
             'category_id' => $main->id,
             'name' => 'アンバー・キング',
             'price' => 1680,
             'description' => '厳選された和牛ブレンドのパティを贅沢に2枚。肉本来の旨味を閉じ込めるよう強火で一気に焼き上げ、溢れ出す肉汁を濃厚なダブルチェダーチーズが包み込みます。特製のビターチョコレートを隠し味に加えたブラウンソースが、茶色ベースの空間に溶け合う深いコクを演出。最後の一口まで贅沢が止まらない、当店の至宝です。',
-            'image_path' =>'images/menus/Whamburger.jpg',
+            'image_path' =>'images/menus/Whamburger.webp',
             'is_active' => true,
 
-            ],
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => 'スモーキー・クリムゾン',
+            'price' => 1980,
+            'description' => '強火で焼き上げた和牛パティに、燻製の香りを纏わせた厚切りベーコンを贅沢にトッピング。ダークブラウンの空間に映えるベーコンの鮮やかな赤と、溢れ出す黄金色のチェダーチーズが織りなす、重厚な味わいの逸品です。',
+            'image_path' => 'images/menus/baconBurger.webp',
+            'is_active' => true,
+
+        ],
         [
             'category_id' => $main->id,
             'name' => 'ザ・ゴールデン・プライム',
             'price' => 1480,
             'description' => '熟成された赤身肉の旨味をダイレクトに感じるシングルパティ。新鮮なトマト、レッドオニオン、そしてシャキシャキのレタスが織りなす色彩は、まさに宝石箱のよう。素材一つ一つの個性が、濃厚なチェダーチーズと特製バンズによって見事に調和した、テイクアウトの概念を覆す至高の一皿です。',
-            'image_path' => 'images/menus/hamburger.jpg',
+            'image_path' => 'images/menus/hamburger.webp',
             'is_active' => true,
 
         ],
@@ -42,7 +51,7 @@ class MenuSeeder extends Seeder
             'name' => 'ミッドナイト・コンボ',
             'price' => 2100,
             'description' => '自慢のバーガーに、カリッと揚げた黄金ポテトとキンキンに冷えたコーラを添えて。最高のご褒美を。',
-            'image_path' =>'images/menus/SetMenu.jpg',
+            'image_path' => 'images/menus/SetMenu.webp',
             'is_active' => true,
 
         ],
@@ -51,7 +60,7 @@ class MenuSeeder extends Seeder
             'name' => '黄金ダブル・グリル',
             'price' => 1200,
             'description' => 'パキッと弾けるジューシーな特製ソーセージを2本贅沢に。スパイスの効いたマスタードが食欲を刺激します。',
-            'image_path' =>'images/menus/HotDog.jpg',
+            'image_path' => 'images/menus/HotDog.webp',
             'is_active' => true,
 
         ],
@@ -60,7 +69,7 @@ class MenuSeeder extends Seeder
             'name' => '黒毛和牛のグリル (200g)',
             'price' => 2800,
             'description' => '絶妙な火入れで閉じ込めた赤身の旨味。添えられたハーブの香りが食欲をそそる、ディナーの主役にふさわしい王道のサーロインステーキです。',
-            'image_path' => 'images/menus/steki.jpg',
+            'image_path' => 'images/menus/steki.webp',
             'is_active' => true,
         ],
         [
@@ -68,7 +77,7 @@ class MenuSeeder extends Seeder
             'name' => 'リブアイステーキ (500g)',
             'price' => 5400,
             'description' => '500gという圧倒的な存在感。鮮やかなハーブバターソースが、ダークなテーブルの上で美しくコントラストを描きます。肉の本質を味わいたい方のための至高の一皿。',
-            'image_path' => 'images/menus/steki2.jpg',
+            'image_path' => 'images/menus/steki2.webp',
             'is_active' => true,
         ],
         [
@@ -76,15 +85,24 @@ class MenuSeeder extends Seeder
             'name' => 'バーボン・スペアリブ',
             'price' => 3200,
             'description' => '特製のダークソースを何度も塗り重ね、じっくりとスモーク。骨からホロリと外れる驚きの柔らかさは、まさに熟練の技が光る贅沢な味わいです。',
-            'image_path' => 'images/menus/supea.jpg',
+            'image_path' => 'images/menus/supea.webp',
             'is_active' => true,
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => 'ノルディック・サーモン',
+            'price' => 2450,
+            'description' => '厳選されたサーモンを絶妙な火入れでグリルし、素材の脂の甘みを引き出しました。鮮やかなアスパラガスとフレッシュなレモンが、重厚なテーブルに彩りと爽やかな香りを添える、至高のメインディッシュです。',
+            'image_path' => 'images/menus/GrilledSalmon.webp',
+            'is_active' => true,
+
         ],
         [
             'category_id' => $main->id,
             'name' => 'プロフェシー・ラップ',
             'price' => 1580,
             'description' => '熟成されたお肉と新鮮な野菜を、魔法の呪文で包み込むように丁寧に巻き上げました。溢れ出す秘伝のホワイトソースが、複雑で深い味わいの予言（プロフェシー）を授けます。',
-            'image_path' =>'images/menus/tortilla.jpg',
+            'image_path' => 'images/menus/tortilla.webp',
             'is_active' => true,
 
         ],
@@ -93,7 +111,7 @@ class MenuSeeder extends Seeder
             'name' => 'サンセット・フィースト',
             'price' => 1320,
             'description' => '黄金色に焼き上げたチキンに、ライムの魔法をひと振り。夕焼け（サンセット）のように鮮やかな野菜とパクチーが、口の中で爽やかな宴（フィースト）を繰り広げます。',
-            'image_path' =>'images/menus/ChickenTacos.jpg',
+            'image_path' => 'images/menus/ChickenTacos.webp',
             'is_active' => true,
 
         ],
@@ -102,7 +120,7 @@ class MenuSeeder extends Seeder
             'name' => 'アズテック・ゴールド',
             'price' => 1750,
             'description' => '古代の秘宝を思わせる、スパイス香る牛挽肉のタコス。濃厚なワカモレとサルサの刺激が、眠っていた食欲を呼び覚ます、まさに「黄金」と呼ぶにふさわしい贅沢な3ピースです。',
-            'image_path' =>'images/menus/tacos.jpg',
+            'image_path' => 'images/menus/tacos.webp',
             'is_active' => true,
 
         ],
@@ -111,7 +129,7 @@ class MenuSeeder extends Seeder
             'name' => '王妃のマルゲリータ',
             'price' => 1850,
             'description' => 'イタリア王妃に捧げられた伝統のレシピ。フレッシュトマトのルビーのような輝きと、芳醇なモッツァレラ、そして摘みたてバジルの香りが、お口の中で鮮やかに踊ります。',
-            'image_path' =>'images/menus/margherita.jpg',
+            'image_path' => 'images/menus/margherita.webp',
             'is_active' => true,
 
         ],
@@ -120,7 +138,7 @@ class MenuSeeder extends Seeder
             'name' => '真夜中のサラミピザ',
             'price' => 2100,
             'description' => 'とろけ出す濃厚なチーズの海に、スパイシーなサラミの赤（クリムゾン）が映える、禁断の夜食。最後の一口までチーズが伸び続ける、至福のエンターテインメントです。',
-            'image_path' =>'images/menus/SalamiPizza.jpg',
+            'image_path' => 'images/menus/SalamiPizza.webp',
             'is_active' => true,
 
         ],
@@ -129,7 +147,7 @@ class MenuSeeder extends Seeder
             'name' => 'アルケミスト・ガーデン',
             'price' => 2350,
             'description' => '色とりどりの野菜、熟成肉、オリーブを贅沢に散りばめた、まさに「錬金術師の庭」のような一皿。複雑に絡み合う素材の旨味が、一口ごとに異なる驚きを与えてくれます。',
-            'image_path' =>'images/menus/MixPizza.jpg',
+            'image_path' => 'images/menus/MixPizza.webp',
             'is_active' => true,
 
         ],
@@ -138,16 +156,24 @@ class MenuSeeder extends Seeder
             'name' => 'チキンシーザーピザ',
             'price' => 2200,
             'description' => '香ばしく焼き上げたグリルチキンとトマトの上に、新鮮なロメインレタスと雪のようなパルメザンを山盛りに。サラダの爽やかさとピザの重厚感が共鳴する、新感覚の贅沢です。',
-            'image_path' =>'images/menus/ChickenPizza.jpg',
+            'image_path' => 'images/menus/ChickenPizza.webp',
             'is_active' => true,
 
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => 'ホワイトタワー・B.L.T.',
+            'price' => 1950,
+            'description' => '贅沢に重ねたベーコンとレタス、そして厚みのある食パンが生み出す圧倒的なボリューム。白いパンの断面が、ダークブラウンのテーブルの上で美しいコントラストを描く、至高のサンドイッチです。',
+            'image_path' => 'images/menus/sandwich.webp',
+            'is_active' => true,
         ],
         [
             'category_id' => $main->id,
             'name' => 'エッグ・パンドミ',
             'price' => 1400,
             'description' => '丁寧に焼き色をつけた食パンに、とろける半熟卵と厚切りハムをサンド。溢れ出す黄金の黄身が、ダークな背景に宝石のように浮かび上がる、ポテトを添え朝の贅沢を凝縮した一皿です。',
-            'image_path' => 'images/menus/Sando.jpg',
+            'image_path' => 'images/menus/Sando.webp',
             'is_active' => true,
         ],
         [
@@ -155,26 +181,66 @@ class MenuSeeder extends Seeder
             'name' => 'ガーデン・サンド',
             'price' => 1850,
             'description' => '3枚の白い食パンをサクッとトーストし、新鮮なトマトとレタスを層にしました。ポテトを添えたこのセットは、高級感漂う店内でひときわ白く輝き、清潔感と鮮やかさを演出します。',
-            'image_path' => 'images/menus/SandwichSet.jpg',
+            'image_path' => 'images/menus/SandwichSet.webp',
             'is_active' => true,
         ],
         [
             'category_id' => $main->id,
-            'name' => 'ホワイトタワー・B.L.T.',
-            'price' => 1950,
-            'description' => '贅沢に重ねたベーコンとレタス、そして厚みのある食パンが生み出す圧倒的なボリューム。白いパンの断面が、ダークブラウンのテーブルの上で美しいコントラストを描く、至高のサンドイッチです。',
-            'image_path' => 'images/menus/sandwich.jpg',
+            'name' => 'クラフト・バケット',
+            'price' => 1180,
+            'description' => '外はカリッと、中はもっちりと焼き上げたバゲットに、厳選された熟成ハムと濃厚なチーズを幾重にも重ねました。断面の美しいコントラストはまさに職人技。素材本来の旨味をダイレクトに味わえる、洗練されたサンドイッチです。',
+            'image_path' => 'images/menus/sandwichtomato.webp',
             'is_active' => true,
+
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => 'アズール・ボウル',
+            'price' => 1850,
+            'description' => '脂の乗った極上のマグロと、クリーミーなアボカドを贅沢に使用。彩り豊かな旬の野菜が、テーブルを華やかに彩ります。特製の醤油ベースのソースが全体を引き締める、贅を尽くしたパワーボウルです。',
+            'image_path' => 'images/menus/bowl.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => '燻製ベーコンのカルボナーラ',
+            'price' => 1750,
+            'description' => '濃厚な卵黄とパルメザンチーズが織りなす黄金色のソースに、香ばしく焼き上げた厚切りベーコンの塩味を効かせました。シンプルながらも奥行きのある深い味わいをご堪能ください。',
+            'image_path' => 'images/menus/carbonara.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => '熟成ミート・ラザニア',
+            'price' => 2100,
+            'description' => 'じっくりと煮込んだボロネーゼと、とろけるようなホワイトソースを幾重にも重ねました。焼き色のついたチーズの香ばしさと、溢れ出す肉の旨味が重厚なひとときを演出する、当店の自信作です。',
+            'image_path' => 'images/menus/lasagna.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => '鮮魚とトマトのペスカトーレ',
+            'price' => 1920,
+            'description' => '旨味が凝縮された貝類と、フレッシュなトマトの酸味が調和する一皿。シックなテーブルに映えるトマトの紅と、魚介の芳醇な香りが食欲を刺激する、本格パスタです。',
+            'image_path' => 'images/menus/TomatoPasta.webp',
+            'is_active' => true,
+
         ],
 
 
 
+
+
+        // サイドメニュー
         [
             'category_id' => $side->id,
             'name' => 'リネン・フライ',
             'price' => 680,
             'description' => '丁寧に手焼きしたような、温かみのあるフレンチフライ。リネンの布に包まれた、まるで休日のピクニックのような贅沢なひとときを。ハーブソルトの香りが魔法のように広がります。',
-            'image_path' => 'images/menus/poteto.jpg',
+            'image_path' => 'images/menus/poteto.webp',
             'is_active' => true,
         ],
         [
@@ -182,15 +248,24 @@ class MenuSeeder extends Seeder
             'name' => 'トレジャー・ポテト',
             'price' => 750,
             'description' => '溢れんばかりのポテトを特製ボックスに詰め込んだ、まさに「食の宝箱」。みんなでシェアするのも良し、独り占めするのも良し。最後までカリカリ感が続く魔法のカットです。',
-            'image_path' => 'images/menus/poteto2.jpg',
+            'image_path' => 'images/menus/poteto2.webp',
             'is_active' => true,
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'クラフト・オニオンリング',
+            'price' => 720,
+            'description' => '甘みの強い大玉の玉ねぎを使用し、独自の配合を施した衣でサクッと軽やかに揚げ上げました。ダークトーンのウッドプレートに映える黄金色のリングは、お酒のお供にも最適な、当店自慢のサイドメニューです。',
+            'image_path' => 'images/menus/OnionRings.webp',
+            'is_active' => true,
+
         ],
         [
             'category_id' => $side->id,
             'name' => 'ゴールド・チーズディップ',
             'price' => 780,
             'description' => 'まるで魔法で溶かした「金（ゴールド）」のような、超濃厚チェダーチーズソース。香ばしいトルティーヤチップスを添えて。一口食べれば、そのコク深い味わいに誰もが魅了される禁断のサイドメニューです。',
-            'image_path' => 'images/menus/CheeseSauce.jpg',
+            'image_path' => 'images/menus/CheeseSauce.webp',
             'is_active' => true,
 
         ],
@@ -199,7 +274,7 @@ class MenuSeeder extends Seeder
             'name' => 'パッチ・ナゲット',
             'price' => 850,
             'description' => '魔法の紙に包まれた、外はカリッと中は驚くほどジューシーな特製ナゲット。一口噛めば、特製ディップソースとの完璧なハーモニーが口いっぱいに広がります。',
-            'image_path' =>'images/menus/nugget.jpg',
+            'image_path' => 'images/menus/nugget.webp',
             'is_active' => true,
 
         ],
@@ -208,7 +283,7 @@ class MenuSeeder extends Seeder
             'name' => 'クリスピーチキン',
             'price' => 1200,
             'description' => '厳選されたハーブとスパイスを配合した独自の衣で、驚くほど軽やかな食感に仕上げました。噛むたびに溢れる肉汁と香りが、深いコクのあるブラウンの背景に映える一品です。',
-            'image_path' => 'images/menus/Chikin2.jpg',
+            'image_path' => 'images/menus/Chikin2.webp',
             'is_active' => true,
         ],
         [
@@ -216,7 +291,7 @@ class MenuSeeder extends Seeder
             'name' => 'デラックス・ナチョス',
             'price' => 1100,
             'description' => 'カリッと揚げたチップスに、濃厚なとろけるチーズと特製ミートソースを贅沢に。アボカドの彩りが、落ち着いた店内に華やかさを添える、シェアに最適なプレートです。',
-            'image_path' => 'images/menus/chip.jpg',
+            'image_path' => 'images/menus/chip.webp',
             'is_active' => true,
         ],
         [
@@ -224,7 +299,7 @@ class MenuSeeder extends Seeder
             'name' => 'サーモンアボカドボウル',
             'price' => 1600,
             'description' => '脂ののった新鮮なサーモンとクリーミーなアボカドを贅沢に使用。ラディッシュの赤とライムの緑が、シックなテーブルを華やかに彩る、宝石箱のようなパワーサラダです。',
-            'image_path' => 'images/menus/ThermonsSalad.jpg',
+            'image_path' => 'images/menus/ThermonsSalad.webp',
             'is_active' => true,
         ],
         [
@@ -232,18 +307,18 @@ class MenuSeeder extends Seeder
             'name' => '旬菜のグリルエチュベ',
             'price' => 1400,
             'description' => 'ブロッコリーやパプリカなど、彩り豊かな野菜の旨味を凝縮しました。ローストガーリックの芳醇な香りとレモンの酸味が、お肉料理の最高のパートナーになります。',
-            'image_path' => 'images/menus/salad.jpg',
+            'image_path' => 'images/menus/salad.webp',
             'is_active' => true,
         ],
 
 
-
+        // ドリンク・デザート
         [
             'category_id' => $drink->id,
             'name' => 'エレメント・ソーダ',
             'price' => 550,
             'description' => '弾ける炭酸に魔法の果実を閉じ込めた、透き通るポーション。メロン、オレンジ、グレープ、ベリーの4種から、今のあなたに必要な色（エレメント）をお選びください。',
-            'image_path' =>'images/menus/drink.jpg',
+            'image_path' => 'images/menus/drink.webp',
             'is_active' => true,
 
         ],
@@ -252,7 +327,7 @@ class MenuSeeder extends Seeder
             'name' => 'トワイライト・ティー',
             'price' => 650,
             'description' => '琥珀色に輝く、最高級の茶葉を使用した香り高い一杯。夕暮れ時（トワイライト）のような落ち着いたひとときを。',
-            'image_path' => 'images/menus/LemonTea.jpg',
+            'image_path' => 'images/menus/LemonTea.webp',
             'is_active' => true,
         ],
         [
@@ -260,7 +335,7 @@ class MenuSeeder extends Seeder
             'name' => 'クラウド・シェイク',
             'price' => 820,
             'description' => 'ふわふわの雲（ホイップ）を冠した、濃厚でクリーミーなデザートドリンク。ストロベリー、バニラ、マンゴーの3種の雲から、甘い魔法のひとときを。',
-            'image_path' =>'images/menus/Shake.jpg',
+            'image_path' => 'images/menus/Shake.webp',
             'is_active' => true,
         ],
         [
@@ -268,7 +343,23 @@ class MenuSeeder extends Seeder
             'name' => '黒魔術のフォンダン',
             'price' => 980,
             'description' => 'ナイフを入れた瞬間、中から熱々の濃厚チョコが溢れ出します。甘い誘惑に抗えない、禁断のデザートです。',
-            'image_path' => 'images/menus/FondanChocolate.jpg',
+            'image_path' => 'images/menus/FondanChocolate.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $drink->id,
+            'name' => 'ショコラ・ベリー・テラス',
+            'price' => 980,
+            'description' => '3つの濃厚なダークチョコレートブラウニーと、口溶けの良いミルクムースを層に重ねました。空中に舞うような軽やかな食感と、フレッシュなベリーの酸味が絶妙に調和する、視覚的にも華やかな一皿です。',
+            'image_path' => 'images/menus/berryCake.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $drink->id,
+            'name' => 'ルージュ・ベルベット',
+            'price' => 1250,
+            'description' => '深紅のスポンジと純白のクリームのコントラストが美しい、気品あふれるケーキです。贅沢に敷き詰められた苺の断面が、テーブルを彩ります。素材の甘みを引き立てる、上品で繊細な味わいをお楽しみください。',
+            'image_path' => 'images/menus/berryCake2.webp',
             'is_active' => true,
         ],
         [
@@ -276,15 +367,15 @@ class MenuSeeder extends Seeder
             'name' => 'ステッキ・ベリー',
             'price' => 620,
             'description' => '幸運を運ぶピンクのステッキを添えた、甘酸っぱいベリーのケーキ。一口食べれば、日常がキラキラと輝き出す魔法を。',
-            'image_path' => 'images/menus/CupcakePink.jpg',
+            'image_path' => 'images/menus/CupcakePink.webp',
             'is_active' => true,
         ],
         [
             'category_id' => $drink->id,
             'name' => 'ウィザード・ココア',
             'price' => 650,
-            'description' => '幸運を運ぶピンクのステッキを添えた、甘酸っぱいベリーのケーキ。一口食べれば、日常がキラキラと輝き出す魔法を。',
-            'image_path' => 'images/menus/CupcakeChocolate.jpg',
+            'description' => '濃厚なチョコケーキの上に、魔法でふくらませたような大粒のマシュマロ。とろける甘さが心を満たす、癒やしのポーションです。',
+            'image_path' => 'images/menus/CupcakeChocolate.webp',
             'is_active' => true,
         ],
         [
@@ -292,7 +383,7 @@ class MenuSeeder extends Seeder
             'name' => 'スターライト・バニラ',
             'price' => 580,
             'description' => '黄金の星が降り注ぐ、太陽のようなカップケーキ。爽やかなバニラとバターの香りが、明るい朝のような元気を与えてくれます。',
-            'image_path' => 'images/menus/CupcakeStar.jpg',
+            'image_path' => 'images/menus/CupcakeStar.webp',
             'is_active' => true,
         ],
         [
@@ -300,7 +391,7 @@ class MenuSeeder extends Seeder
             'name' => 'ギャラクシー・ケーキ',
             'price' => 680,
             'description' => '深い藍色の夜空に銀河の星々を散りばめた、神秘的な一皿。食べるのがもったいないほど美しい、宇宙の秘密を閉じ込めたケーキです。',
-            'image_path' => 'images/menus/CupcakeStar2.jpg',
+            'image_path' => 'images/menus/CupcakeStar2.webp',
             'is_active' => true,
         ],
         [
@@ -308,7 +399,7 @@ class MenuSeeder extends Seeder
             'name' => 'ベリー・ドーナツ',
             'price' => 850,
             'description' => '魔法が弾けた瞬間の、甘酸っぱい苺の衝撃。濃厚なストロベリーミルクの海に浸かった、王妃に捧げる極上のドーナツです。',
-            'image_path' => 'images/menus/berry.jpg',
+            'image_path' => 'images/menus/berry.webp',
             'is_active' => true,
         ],
         [
@@ -316,7 +407,7 @@ class MenuSeeder extends Seeder
             'name' => '黄金のキャラメルリング',
             'price' => 1980,
             'description' => '魔法で空中に浮き上がったかのような、軽やかな食感。2Pの溢れ出す黄金のキャラメルシロップと、2Pの大粒のベリーが口の中で踊り出します。',
-            'image_path' => 'images/menus/Donatu.jpg',
+            'image_path' => 'images/menus/Donatu.webp',
             'is_active' => true,
         ],
         [
@@ -324,7 +415,7 @@ class MenuSeeder extends Seeder
             'name' => '6層の塔',
             'price' => 1600,
             'description' => '焼きたての香りが立ち上る、圧巻の6段積み。とろけるバターと琥珀色のシロップは、まるで黄金の滝のようにあなたの食欲を誘います。',
-            'image_path' => 'images/menus/ponkeck.jpg',
+            'image_path' => 'images/menus/ponkeck.webp',
             'is_active' => true,
         ],
 

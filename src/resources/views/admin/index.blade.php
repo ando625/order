@@ -14,7 +14,8 @@
         <div class="order-card status-{{ $order->status }}">
             <div class="order-header">
                 <span class="order-number">
-                    注文番号: #{{$order->order_number}}
+                    <small >注文番号:</small> 
+                    <span class="number-big">#{{$order->order_number}}</span>
                 </span>
                 <span class="order-time">
                     {{$order->created_at->format('H:i')}}

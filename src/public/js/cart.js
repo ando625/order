@@ -33,7 +33,7 @@ function displayCart() {
     checkoutBtn.disabled = false;
 
     cartItemsList.innerHTML = cart.map(item => `
-        <div class="cart-item" data-item-id="${item.id}">
+        <div class="cart-item" data-item-id="${item.cartItemId}">
             <div class="cart-item-image">
                 <img src="${item.image}" alt="${item.name}"></img>
             </div>
@@ -46,12 +46,12 @@ function displayCart() {
                 <div class="cart-item-actions">
                     <div class="quantity-control">
                         <label>数量：</label>
-                        <button class="qty-btn" onclick="decreaseQuantity('${item.id}')">-</button>
+                        <button class="qty-btn" onclick="decreaseQuantity('${item.cartItemId}')">-</button>
                         <input type="number" class="qty-input" value="${item.quantity}" readonly>
-                        <button class="qty-btn" onclick="increaseQuantity('${item.id}')">+</button>
+                        <button class="qty-btn" onclick="increaseQuantity('${item.cartItemId}')">+</button>
                     </div>
                     <span class="item-subtotal">¥${(item.price * item.quantity).toLocaleString()}</span>
-                    <button class="btn-remove" onclick="showDeleteModal('${item.id}')">削除</button>
+                    <button class="btn-remove" onclick="showDeleteModal('${item.cartItemId}')">削除</button>
                 </div>
             </div>
         </div>
@@ -59,8 +59,8 @@ function displayCart() {
 }
 
 // 数量を減らす
-function decreaseQuantity(itemId) {
-    const item = cart.find(i => i.id === itemId);
+function decreaseQuantity(cartItemId) {
+    const item = cart.find(i => i.cartItemId === cartItemId);
     if (item && item.quantity > 1) {
         item.quantity--;
         saveCart();
@@ -73,8 +73,8 @@ function decreaseQuantity(itemId) {
 // cart.find(menu => menu.id === itemId);
 // cart.find(x => x.id === itemId);
 // 数量を増やす
-function increaseQuantity(itemId) {
-    const item = cart.find(i => i.id === itemId);
+function increaseQuantity(cartItemId) {
+    const item = cart.find(i => i.cartItemId === cartItemId);
     if (item && item.quantity < 50) {
         item.quantity++;
         saveCart();
@@ -114,7 +114,7 @@ document.getElementById('deleteModal').addEventListener('click', function (e) {
 // 削除を確定
 document.getElementById('confirmDelete').addEventListener('click', function () {
     if (deleteTarget) {
-        cart = cart.filter(item => item.id !== deleteTarget);
+        cart = cart.filter(item => item.cartItemId !== deleteTarget);
         saveCart();
         displayCart();
         updateSummary();
@@ -156,11 +156,14 @@ document.getElementById('checkoutBtn').addEventListener('click', function () {
     //チェックアウト内容を表示
     checkoutItemsList.innerHTML = cart.map(item => `
         <div class="checkout-item">
-            <span class="checkout-item-name">${item.name}</span>
+            <div class="checkout-item-main">
+                <span class="checkout-item-name">${item.name}</span>
+                ${item.option ? `<span class="checkout-item-option" style="font-size: 0.8em; color: #d4af37;">（${item.option}）</span>` : ''}
+            </div>
             <span class="checkout-item-qty">×${item.quantity}</span>
             <span class="checkout-item-price">¥${(item.price * item.quantity).toLocaleString()}</span>
         </div>
-        `).join('');
+    `).join('');
 
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const tax = Math.floor(subtotal * 0.1);

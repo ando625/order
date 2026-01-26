@@ -44,7 +44,7 @@
                 data-menu-description="{{ $menu->description }}"
                 data-menu-image="{{ asset($menu->image_path) }}">
                 <div class="menu-image">
-                    <img src="{{ asset($menu->image_path) }}" alt="{{ $menu->name }}">
+                    <img src="{{ asset($menu->image_path) }}" alt="{{ $menu->name }}" >
                 </div>
                 <div class="menu-info">
                     <h3 class="menu-name">{{ $menu->name }}</h3>

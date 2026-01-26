@@ -15,37 +15,36 @@
 /* ★1. カードを横に3枚並べる設定に変更 */
 .order-grid {
     display: grid;
-    /* 4枚から3枚に変更：1枚あたりの面積が増え、視認性が向上します */
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    /* 幅に余裕が出るので、カード間の隙間も少し広げると綺麗です */
     padding: 10px;
+    align-items: start;
 }
 
 /* 注文カード1枚の設定 */
 .order-card {
     background-color: rgba(45, 33, 24, 0.6);
-    border: 1px solid #4a3829;
+    border: 3px solid #e5c158;
     padding: 25px;
-    /* 3枚並びで広くなった分、内側の余白を少し贅沢に */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    min-height: 450px;
-    /* カードの横幅に合わせて最低の高さも少し高めに調整 */
+    min-height: auto !important;
+    height: fit-content;
     position: relative;
 }
 /* 右下の小さなバッジ */
 .status-badge {
     position: absolute;
-    top: -10px;
+    top: -20px;
     right: 10px;
     background: #4a3829;
     color: #f1e5d1;
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: 12px;
-    border: 1px solid #e5c158;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #e5c158;
 }
 
 .order-header {
@@ -60,7 +59,13 @@
     color: #e5c158;
     font-weight: bold;
     font-size: 16px;
-    /* 3枚並びなら少し大きくしても大丈夫 */
+}
+.number-big {
+    font-size: 25px;
+    font-weight: bold;
+    color: #e5c158;
+    margin-left: 5px;
+    vertical-align: middle;
 }
 
 .order-time {
@@ -124,7 +129,7 @@
 
 /* 3. 合計金額とボタンを一番下に揃える */
 .order-footer {
-    margin-top: auto;
+    margin-top: 20px;
     padding-top: 25px;
 }
 
@@ -165,3 +170,59 @@
     box-shadow: 0 0 15px rgba(229, 193, 88, 0.3);
 }
 
+/* --- ステータス別：受け渡し担当用（フロント） --- */
+
+/* 1. 受け渡し待ち (status-ready) : 
+   背景は暗いままで「枠線」と「外光」を最強にして目立たせます */
+.status-ready {
+    background-color: rgba(45, 33, 24, 0.9) !important;
+    /* 背景は暗く戻す */
+    border: 3px solid #e5c158 !important;
+    /* 黄金の枠 */
+    box-shadow: 0 0 25px rgba(229, 193, 88, 0.6);
+    /* 外側が光る演出 */
+    transform: scale(1.02);
+    z-index: 5;
+}
+
+/* 文字色は白・金で固定して読みやすさを確保 */
+.status-ready .order-number,
+.status-ready .total-value {
+    color: #e5c158 !important;
+}
+
+.status-ready .order-table td,
+.status-ready .order-time {
+    color: #ffffff !important;
+    /* 文字はハッキリ白く */
+}
+
+/* ボタンだけを強く目立たせる（ここが一番重要） */
+.status-ready .done-button {
+    background-color: #e5c158 !important;
+    color: #1a1510 !important;
+    font-weight: 900 !important;
+    box-shadow: 0 0 10px rgba(229, 193, 88, 0.4);
+}
+
+/* 2. 調理中 (status-cooking) : 
+   作業中なので、ゴールドの要素は残しつつ、光らせない */
+.status-cooking {
+    background-color: rgba(45, 33, 24, 0.7) !important;
+    border: 1px solid #e5c158 !important;
+    opacity: 0.85;
+}
+
+/* 3. 注文確定 (status-pending) : 
+   一番おとなしく、情報を「沈ませる」 */
+.status-pending {
+    background-color: rgba(30, 30, 30, 0.4) !important;
+    border: 1px solid rgba(191, 163, 138, 0.2) !important;
+    opacity: 0.5;
+    /* 全体的に薄くする */
+}
+
+.status-pending * {
+    color: rgba(241, 229, 209, 0.4) !important;
+    /* 中の文字もすべて薄く */
+}
