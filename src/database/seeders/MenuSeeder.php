@@ -48,10 +48,19 @@ class MenuSeeder extends Seeder
         ],
         [
             'category_id' => $main->id,
+            'name' => 'クラフト・タルタル・チキン',
+            'price' => 1550,
+            'description' => '厳選した鶏もも肉を独自のスパイスでマリネし、驚くほどジューシーに揚げ上げました。卵のコクを活かした自家製タルタルソースと、フレッシュな野菜、濃厚なチェダーチーズが重なり合う、食べ応え抜群の本格チキンバーガーです。',
+            'image_path' => 'images/menus/ChickenBurger.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $main->id,
             'name' => 'ミッドナイト・コンボ',
-            'price' => 2100,
-            'description' => '自慢のバーガーに、カリッと揚げた黄金ポテトとキンキンに冷えたコーラを添えて。最高のご褒美を。',
-            'image_path' => 'images/menus/SetMenu.webp',
+            'price' => 2300,
+            'description' => '当店自慢の肉厚なクラフトバーガーに、カリッと揚げたポテトフライと、喉越しの良いコーラを添えた王道のセットメニューです。メインの旨味を最大限に引き立てるサイドとの組み合わせは、ランチタイムやディナーの満足度を一層高めます。',
+            'image_path' => 'images/menus/Set.webp',
             'is_active' => true,
 
         ],
@@ -66,15 +75,23 @@ class MenuSeeder extends Seeder
         ],
         [
             'category_id' => $main->id,
-            'name' => '黒毛和牛のグリル (200g)',
+            'name' => '黒毛和牛のグリル',
             'price' => 2800,
-            'description' => '絶妙な火入れで閉じ込めた赤身の旨味。添えられたハーブの香りが食欲をそそる、ディナーの主役にふさわしい王道のサーロインステーキです。',
+            'description' => '200gの和牛を絶妙な火入れで閉じ込めた赤身の旨味。添えられたハーブの香りが食欲をそそる、ディナーの主役にふさわしい王道のサーロインステーキです。',
             'image_path' => 'images/menus/steki.webp',
             'is_active' => true,
         ],
         [
             'category_id' => $main->id,
-            'name' => 'リブアイステーキ (500g)',
+            'name' => 'プレミアム・フィレ',
+            'price' => 4200,
+            'description' => '牛肉の中で最も柔らかいとされるフィレ肉を、300gの厚切りで贅沢に提供。表面を香ばしく焼き上げ、中は美しいローズ色に仕上げる絶妙な火入れにより、赤身肉の繊細な旨味と口どけをダイレクトに堪能できる至高のステーキです。',
+            'image_path' => 'images/menus/FilletSteak.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => 'リブアイステーキ',
             'price' => 5400,
             'description' => '500gという圧倒的な存在感。鮮やかなハーブバターソースが、よく合い、肉の本質を味わいたい方のための至高の一皿。',
             'image_path' => 'images/menus/steki2.webp',
@@ -90,9 +107,17 @@ class MenuSeeder extends Seeder
         ],
         [
             'category_id' => $main->id,
+            'name' => 'ホール・グリル・チキン',
+            'price' => 3800,
+            'description' => '丸鶏を一羽丸ごと、ハーブと岩塩でじっくりと時間をかけてローストしました。皮目はパリッと香ばしく、中は驚くほどしっとりと仕上げています。鶏本来の旨味を余すことなく閉じ込めた、シェアにも最適なダイナミックなメインディッシュです。',
+            'image_path' => 'images/menus/TandooriChicken.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $main->id,
             'name' => 'ノルディック・サーモン',
             'price' => 2450,
-            'description' => '厳選されたサーモンを絶妙な火入れでグリルし、素材の脂の甘みを引き出しました。鮮やかなアスパラガスとフレッシュなレモンが、重厚なテーブルに彩りと爽やかな香りを添える、至高のメインディッシュです。',
+            'description' => '大ぶりのサーモンフィレを、皮目はパリッと、身はしっとりとジューシーに焼き上げました。じっくりグリルして甘みを引き出した旬の野菜を添えて。レモンの酸味がサーモンの豊かな風味を一層引き立てる、至高のメインディッシュです。',
             'image_path' => 'images/menus/GrilledSalmon.webp',
             'is_active' => true,
 
@@ -164,9 +189,18 @@ class MenuSeeder extends Seeder
             'category_id' => $main->id,
             'name' => 'ホワイトタワー・B.L.T.',
             'price' => 1950,
-            'description' => '贅沢に重ねたベーコンとレタス、そして厚みのある食パンが生み出す圧倒的なボリューム。至高のサンドイッチです。',
+            'description' => '丁寧に焼き上げたトーストに、旨味の強い厚切りベーコン、フレッシュなレモン色の卵、みずみずしいレタスとトマトを幾重にも重ねました。まろやかなマヨネーズが素材の一体感を高める、正統派のボリュームサンドイッチです。',
             'image_path' => 'images/menus/sandwich.webp',
             'is_active' => true,
+        ],
+        [
+            'category_id' => $main->id,
+            'name' => 'カプレーゼ・バゲット',
+            'price' => 1850,
+            'description' => '香ばしく焼き上げたハードバゲットに、厚切りのフレッシュトマト、濃厚なモッツァレラチーズ、そして熟成ハムを幾重にも重ねました。バジルの爽やかな香りとオリーブオイルの風味が素材の味を引き立てる、食べ応え抜群のプレミアムサンドイッチです。',
+            'image_path' => 'images/menus/bucket.webp',
+            'is_active' => true,
+
         ],
         [
             'category_id' => $main->id,
@@ -185,32 +219,7 @@ class MenuSeeder extends Seeder
             'image_path' => 'images/menus/Sando.webp',
             'is_active' => true,
         ],
-        [
-            'category_id' => $main->id,
-            'name' => 'ガーデン・サンド',
-            'price' => 1850,
-            'description' => '3枚の白い食パンをサクッとトーストし、新鮮なトマトとレタスを層にしました。ポテトを添えたこのセットは、満足度の高いセットになります。',
-            'image_path' => 'images/menus/SandwichSet.webp',
-            'is_active' => true,
-        ],
-        [
-            'category_id' => $main->id,
-            'name' => 'クラフト・バケット',
-            'price' => 1180,
-            'description' => '外はカリッと、中はもっちりと焼き上げたバゲットに、厳選された熟成ハムと濃厚なチーズを幾重にも重ねました。断面の美しいコントラストはまさに職人技。素材本来の旨味をダイレクトに味わえる、洗練されたサンドイッチです。',
-            'image_path' => 'images/menus/sandwichtomato.webp',
-            'is_active' => true,
 
-        ],
-        [
-            'category_id' => $main->id,
-            'name' => 'クラフト・キッシュ',
-            'price' => 1200,
-            'description' => 'サクサクのパイ生地の中に、旬の野菜と濃厚なアパレイユを閉じ込め、じっくりと焼き上げました。素材の旨みが凝縮された、シックな空間でのティータイムにも最適な、上品な味わいの一皿。',
-            'image_path' => 'images/menus/quiche.webp',
-            'is_active' => true,
-
-        ],
         [
             'category_id' => $main->id,
             'name' => 'アズール・ボウル',
@@ -226,15 +235,6 @@ class MenuSeeder extends Seeder
             'price' => 1750,
             'description' => '濃厚な卵黄とパルメザンチーズが織りなす黄金色のソースに、香ばしく焼き上げた厚切りベーコンの塩味を効かせました。シンプルながらも奥行きのある深い味わいをご堪能ください。',
             'image_path' => 'images/menus/carbonara.webp',
-            'is_active' => true,
-
-        ],
-        [
-            'category_id' => $main->id,
-            'name' => 'スモーキー・マックチーズ',
-            'price' => 1420,
-            'description' => '濃厚なチェダーチーズソースをたっぷりと絡めたマカロニに、カリカリに焼き上げた燻製ベーコンをトッピング。重厚な空間にふさわしい、奥深いコクと背徳的な旨味が押し寄せる、大人のためのサイドディッシュです。',
-            'image_path' => 'images/menus/MacaroniCheese.webp',
             'is_active' => true,
 
         ],
@@ -298,10 +298,96 @@ class MenuSeeder extends Seeder
         ],
         [
             'category_id' => $side->id,
+            'name' => 'クラフト・ナゲット',
+            'price' => 550,
+            'description' => '外はカリッと、中はジューシーに仕上げた特製チキンナゲットです。独自のスパイスを配合した衣が鶏肉の甘みを引き立てます。ハンバーガーやパスタのお供に最適な、大人から子供まで楽しめるサイドディッシュの定番です。',
+            'image_path' => 'images/menus/nugget.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $side->id,
             'name' => 'クラフト・オニオンリング',
             'price' => 720,
             'description' => '甘みの強い大玉の玉ねぎを使用し、独自の配合を施した衣でサクッと軽やかに揚げ上げました。黄金色のリングは、お酒のお供にも最適な、当店自慢のサイドメニューです。',
             'image_path' => 'images/menus/OnionRings.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'フィッシュ＆チップス',
+            'price' => 1650,
+            'description' => 'サクサクの衣で揚げた白身魚のフライに、たっぷりのポテトフライを添えた英国風の定番メニュー。濃厚なアボカドをベースにしたクリーミーなワカモレディップが、フライの香ばしさと絶妙にマッチする一皿です。',
+            'image_path' => 'images/menus/FishAndChips.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'クラシック・プーティン',
+            'price' => 1100,
+            'description' => 'カナダの伝統的なソウルフードを再現。揚げたてのポテトに、濃厚な牛骨ベースのグレービーソースと、とろける粒状のチーズをたっぷりとトッピングしました。ソースのコクとチーズの食感がクセになる、満足感のある一皿です。',
+            'image_path' => 'images/menus/pootie.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'クリスピーチキン',
+            'price' => 1200,
+            'description' => '厳選されたハーブとスパイスを配合した独自の衣で、驚くほど軽やかな食感に仕上げました。噛むたびに溢れる肉汁と香りが、最高の一品です。',
+            'image_path' => 'images/menus/Chikin2.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'スパイス・フィッシュフライ',
+            'price' => 980,
+            'description' => '身の引き締まった白身魚を、数種類のハーブとスパイスを配合した特製の衣でサクッと揚げ上げました。噛むたびに広がるスパイスの豊かな香りが、魚の甘みを引き立てます。お酒の席にも最適な、風味豊かなサイドメニューです。',
+            'image_path' => 'images/menus/FishFry.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'スモーキー・マックチーズ',
+            'price' => 1420,
+            'description' => '濃厚なチェダーチーズソースをたっぷりと絡めたマカロニに、カリカリに焼き上げた燻製ベーコンをトッピング。重厚な空間にふさわしい、奥深いコクと背徳的な旨味が押し寄せる、大人のためのサイドディッシュです。',
+            'image_path' => 'images/menus/MacaroniCheese.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'プロシュート・プラッター',
+            'price' => 1850,
+            'description' => '熟成された生ハムを極薄にスライスし、贅沢に盛り合わせました。口の中でとろけるような脂の甘みと、凝縮された肉の旨味をお楽しみいただけます。ワインやカクテルのお供に、そのままでも、パンに合わせても愉しめる逸品です。',
+            'image_path' => 'images/menus/prosciutto.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'プライム・マッシュポテト',
+            'price' => 850,
+            'description' => 'シルクのような滑らかな口溶けと、芳醇なバターの香りが広がる究極のマッシュポテト。メインディッシュの美しさを引き立てる、洗練されたサイドメニューです。',
+            'image_path' => 'images/menus/MashedPotato.webp',
+            'is_active' => true,
+
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => '熟成ビーフシチュー',
+            'price' => 1450,
+            'description' => '厳選した牛塊肉を赤ワインと香味野菜でホロホロになるまでじっくりと煮込みました。肉の旨味が溶け出した濃厚なデミグラスソースに、生クリームのコクが加わった贅沢な味わいです。メイン料理に添える至福のサイドメニューとしてお楽しみください。',
+            'image_path' => 'images/menus/BeefStew.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'クラフト・キッシュ',
+            'price' => 1200,
+            'description' => 'サクサクのパイ生地の中に、旬の野菜と濃厚なアパレイユを閉じ込め、じっくりと焼き上げました。素材の旨みが凝縮された、シックな空間でのティータイムにも最適な、上品な味わいの一皿。',
+            'image_path' => 'images/menus/quiche.webp',
             'is_active' => true,
 
         ],
@@ -316,43 +402,26 @@ class MenuSeeder extends Seeder
         ],
         [
             'category_id' => $side->id,
-            'name' => 'プライム・マッシュポテト',
-            'price' => 850,
-            'description' => 'シルクのような滑らかな口溶けと、芳醇なバターの香りが広がる究極のマッシュポテト。メインディッシュの美しさを引き立てる、洗練されたサイドメニューです。',
-            'image_path' => 'images/menus/MashedPotato.webp',
-            'is_active' => true,
-
-        ],
-        [
-            'category_id' => $side->id,
-            'name' => 'パッチ・ナゲット',
-            'price' => 850,
-            'description' => '魔法の紙に包まれた、外はカリッと中は驚くほどジューシーな特製ナゲット。一口噛めば、特製ディップソースとの完璧なハーモニーが口いっぱいに広がります。',
-            'image_path' => 'images/menus/nugget.webp',
-            'is_active' => true,
-
-        ],
-        [
-            'category_id' => $side->id,
-            'name' => 'クリスピーチキン',
-            'price' => 1200,
-            'description' => '厳選されたハーブとスパイスを配合した独自の衣で、驚くほど軽やかな食感に仕上げました。噛むたびに溢れる肉汁と香りが、最高の一品です。',
-            'image_path' => 'images/menus/Chikin2.webp',
-            'is_active' => true,
-        ],
-        [
-            'category_id' => $side->id,
             'name' => 'デラックス・ナチョス',
             'price' => 1100,
-            'description' => 'カリッと揚げたチップスに、濃厚なとろけるチーズと特製ミートソースを贅沢に。アボカドの彩りが、落ち着いた店内に華やかさを添える、シェアに最適なプレートです。',
+            'description' => 'パリッと揚げたトルティーヤチップスに、完熟アボカドを使用した濃厚なワカモレと、コク深いとろけるチーズを贅沢に添えました。チップスの香ばしさとディップのクリーミーさが後を引く、シェアにも最適なサイドメニューです。',
             'image_path' => 'images/menus/chip.webp',
+            'is_active' => true,
+        ],
+
+        [
+            'category_id' => $side->id,
+            'name' => 'ローストチキン・ガーデンサラダ',
+            'price' => 1520,
+            'description' => 'しっとりと焼き上げたローストチキンをメインに、数肉厚のアボカド、フレッシュな赤玉ねぎやトマトを贅沢に盛り合わせたパワーサラダです。素材の味を活かしたシンプルな味付けで、メインディッシュとしても十分な満足感を提供します。',
+            'image_path' => 'images/menus/ChickenSalad.webp',
             'is_active' => true,
         ],
         [
             'category_id' => $side->id,
             'name' => 'サーモンアボカドボウル',
             'price' => 1600,
-            'description' => '脂ののった新鮮なサーモンとクリーミーなアボカドを贅沢に使用。ラディッシュの赤とライムの緑が、宝石箱のようなパワーサラダです。',
+            'description' => '脂の乗った新鮮なサーモンのスライスを主役に、彩り豊かな季節の野菜をふんだんに使用しました。サーモンのとろける食感と、野菜のシャキシャキとしたコントラストが愉しめる、栄養バランスに優れたヘルシーな一皿です。',
             'image_path' => 'images/menus/ThermonsSalad.webp',
             'is_active' => true,
         ],
@@ -364,6 +433,32 @@ class MenuSeeder extends Seeder
             'image_path' => 'images/menus/salad.webp',
             'is_active' => true,
         ],
+        [
+            'category_id' => $side->id,
+            'name' => 'ベジタブル・グリル串',
+            'price' => 780,
+            'description' => '旬の野菜を大きめにカットし、直火で香ばしく焼き上げました。じっくり火を通すことで野菜本来の甘みを最大限に引き出し、岩塩とハーブでシンプルに仕上げています。素材の食感と鮮やかな味わいをお楽しみください。',
+            'image_path' => 'images/menus/vegetables.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => '熟成プチ・ブール',
+            'price' => 280,
+            'description' => '小麦本来の香りと甘みが凝縮された、手のひらサイズの自家製パンです。外側はパリッと、中は驚くほどもっちりとした食感に仕上げました。シチューやステーキのソースを最後まで愉しむための、完璧な名脇役です。',
+            'image_path' => 'images/menus/bread2.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $side->id,
+            'name' => 'クラフト・カンパーニュ',
+            'price' => 450,
+            'description' => '低温でじっくりと発酵させ、力強い粉の風味を引き出した大きなサイズの田舎風パンを、食べやすく厚切りにして提供します。噛み締めるほどに広がる酸味と旨味が、お肉料理やワインの味わいをより深く豊かに演出します。',
+            'image_path' => 'images/menus/bread3.webp',
+            'is_active' => true,
+        ],
+
+
 
 
         // ドリンク・デザート
@@ -390,6 +485,14 @@ class MenuSeeder extends Seeder
             'price' => 820,
             'description' => 'ふわふわの雲（ホイップ）を冠した、濃厚でクリーミーなデザートドリンク。ストロベリー、バニラ、マンゴーの3種の雲から、甘い魔法のひとときを。',
             'image_path' => 'images/menus/Shake.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $drink->id,
+            'name' => '完熟バナナ・オレ',
+            'price' => 720,
+            'description' => '完熟したバナナを贅沢に使用し、濃厚なミルクと合わせたフレッシュな一杯。バナナ本来の自然な甘みと、クリーミーな喉越しが特徴です。お食事の後のデザートドリンクとしても、リラックスタイムの栄養補給としても最適です。',
+            'image_path' => 'images/menus/BananaMilk.webp',
             'is_active' => true,
         ],
         [
@@ -478,6 +581,30 @@ class MenuSeeder extends Seeder
             'price' => 1980,
             'description' => '魔法で空中に浮き上がったかのような、軽やかな食感。2Pの溢れ出す黄金のキャラメルシロップと、2Pの大粒のベリーが口の中で踊り出します。',
             'image_path' => 'images/menus/Donatu.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $drink->id,
+            'name' => 'ショコラ・コレクション',
+            'price' => 980,
+            'description' => '小ぶりなサイズのドーナツに、ビター、ミルク、ホワイトなど数種類の厳選チョコをコーティングした贅沢な6個セット。トッピングごとに異なる食感とカカオの風味を愉しめる、チョコ好きのためのバラエティ豊かな一皿です。',
+            'image_path' => 'images/menus/SetDonut.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $drink->id,
+            'name' => 'クラフト・ミニドーナツ',
+            'price' => 850,
+            'description' => '一口サイズより少し大きめで食べ応えのある、自家製ミニドーナツを5個セットで提供。表面はサクッと、中はふんわりとした食感に仕上げ、優しい甘さのシュガーを纏わせました。ティータイムのシェアにも最適な一品です。',
+            'image_path' => 'images/menus/RoundDonut.webp',
+            'is_active' => true,
+        ],
+        [
+            'category_id' => $drink->id,
+            'name' => 'ハニーバナナ・ワッフル',
+            'price' => 1480,
+            'description' => '外はカリッと焼き上げ、中はもっちりとした厚手のワッフルを2段重ねに。フレッシュバナナを贅沢に添え、芳醇なシロップをたっぷりとかけました。生地の香ばしさとフルーツの甘みが絶妙に調和する、満足感のあるプレートです。',
+            'image_path' => 'images/menus/BananaWaffles.webp',
             'is_active' => true,
         ],
         [
