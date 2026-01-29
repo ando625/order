@@ -173,7 +173,7 @@ pending → cooking → ready → handed
 
 
 このリポジトリは **Docker + Laravel 10 + MySQL + Fortify** 環境で動作する Web アプリです。
-ここでは **環境構築・テスト** を含めて順を追って説明します。
+ここでは **環境構築** を含めて順を追って説明します。
 
 ---
 # 環境構築・操作手順
