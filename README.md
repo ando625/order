@@ -181,7 +181,7 @@ pending → cooking → ready → handed
 
 ```bash
 git clone git@github.com:ando625/order.git
-mv order orderapp
+cd order
 ```
 
 ---

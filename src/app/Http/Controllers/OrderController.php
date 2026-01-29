@@ -10,7 +10,6 @@ use App\Models\OrderItem;
 
 class OrderController extends Controller
 {
-    //
     public function index(Request $request)
     {
         $categories = Category::all();
