@@ -353,6 +353,10 @@
     justify-content: center;
     align-items: center;
     z-index: 2000;
+
+    /* 画面高さを超えたとき親もスクロール可能に */
+    overflow-y: auto;
+    padding-top: 40px; /* 上部に余白をあけて調整 */
 }
 
 /* モーダル表示時 */
@@ -370,9 +374,11 @@
     width: 90%;
     color: #f4ece2;
     position: relative;
+
+    /* モーダルが画面より高くなるときにスクロールできるように */
+    max-height: 80vh;
+    overflow-y: auto;
 }
-
-
 
 /* モーダル内ボタンエリア */
 .modal-actions {
@@ -516,4 +522,3 @@
         margin-left: 0;
     }
 }
-

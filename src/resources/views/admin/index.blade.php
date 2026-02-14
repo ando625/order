@@ -57,10 +57,14 @@
                     </span>
                 </div>
 
+                @if($order->status === 'ready')
                 <form action="{{route('admin.orders.handed', $order)}}" method="post">
                     @csrf
                     <button type="submit" class="done-button">受け渡し完了</button>
                 </form>
+                @else
+                <button class="done-button">受け渡し完了</button>
+                @endif
             </div>
         </div>
         @endforeach

@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="kitchen-container">
-    <h1 class="page-title">KITCHEN MONITOR</h1>
+    <h1 class="page-title">キッチンモニター</h1>
 
     <div class="orders-grid">
         @foreach ($orders as $order)

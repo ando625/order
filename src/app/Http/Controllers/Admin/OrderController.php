@@ -12,10 +12,11 @@ class OrderController extends Controller
     //未受け渡し一覧
     public function index()
     {
+        $today = Carbon::today();
         $orders = Order::with([
             'items.menu'])
             ->whereIn('status', ['pending', 'cooking', 'ready'])//受け渡し完了
-            ->whereDate('created_at', Carbon::today())
+            ->whereDate('created_at', $today)
             ->orderBy('created_at', 'asc')//古い順で並べるasc
             ->get();
 
@@ -25,6 +26,14 @@ class OrderController extends Controller
     // 受け渡し一覧
     public function handed(Order $order)
     {
+
+        // 画面から直接 POST されても安心
+        if ($order->status !== 'ready') {
+            return redirect()->route('admin.index')
+                ->with('error', '調理が完了した注文のみ受け渡しできます。');
+        }
+
+        
         $order->update([
             'status' => 'handed',
         ]);
