@@ -496,7 +496,7 @@ PHP 8.1 + Laravel 10 から、PHP 8.4 + Laravel 13 に更新しました。
 
 - 期限の出典: [PHP Supported Versions](https://www.php.net/supported-versions.php) / [Laravel Release Notes](https://laravel.com/docs/13.x/releases)
 - `composer audit` で検出された脆弱性は、更新前の54件から0件になりました
-- 2026年5月にサプライチェーン攻撃を受けた `laravel-lang` のパッケージ（`laravel-lang/common` とその関連17個）は、使っていなかったため依存から削除しました
+- 2026年5月にサプライチェーン攻撃を受けた `laravel-lang` のパッケージ（`laravel-lang/common` を含む17個）は、使っていなかったため依存から削除しました
 
 ### 脆弱性チェックの方法
 
